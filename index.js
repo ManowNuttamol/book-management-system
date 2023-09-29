@@ -30,10 +30,13 @@ function addBook(_callback) {
     "unknow"
   );
   let add_year = Number(
-    prompt(`Please enter the ${chalk.green("year")} this book was published: `)
+    prompt(
+      `Please enter the ${chalk.green("year")} this book was published: `,
+      "NaN"
+    )
   );
   let add_price = Number(
-    prompt(`Please enter the ${chalk.green("price")} of this book: `)
+    prompt(`Please enter the ${chalk.green("price")} of this book: `, "NaN")
   );
   books.push({
     title: add_title,
@@ -132,7 +135,9 @@ function exit() {
     })
     .then((answers) => {
       if (answers["status"] == "Yes") {
-        console.log(`${chalk.red("Log out")} book-management-system successfully`);
+        console.log(
+          `${chalk.red("Log out")} book-management-system successfully`
+        );
       } else {
         manage();
       }
